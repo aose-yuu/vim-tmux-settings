@@ -118,6 +118,7 @@ set encoding=UTF-8
 set number
 set helplang=ja
 set backspace=2
+set lines=60
 set nobackup
 set noshowmode
 set noswapfile
