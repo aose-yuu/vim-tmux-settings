@@ -7,18 +7,16 @@ let g:polyglot_disabled = ['markdown']
 call jetpack#begin('~/.vim/jetpackged')
 
 " 見た目プラグイン
-Jetpack 'cocopon/iceberg.vim'
+" Jetpack 'cocopon/iceberg.vim'
+Jetpack 'joshdick/onedark.vim'
 Jetpack 'Yggdroot/indentLine'
 Jetpack 'itchyny/lightline.vim'
 Jetpack 'sheerun/vim-polyglot'
-Jetpack 'joshdick/onedark.vim'
 
 " エディタ関連プラグイン
 Jetpack 'tpope/vim-surround'
 Jetpack 'tpope/vim-commentary'
-Jetpack 'brglng/vim-im-select'
 Jetpack 'mattn/vim-lexiv'
-Jetpack 'turbio/bracey.vim'
 Jetpack 'lambdalisue/fern.vim'
 
 " 補完・LSP関連プラグイン
@@ -35,11 +33,7 @@ Jetpack 'prabirshrestha/vim-lsp'
 Jetpack 'mattn/vim-lsp-settings'
 
 " 各言語別プラグイン
-Jetpack 'dart-lang/dart-vim-jetpackin'
-Jetpack 'hankchiutw/flutter-reload.vim'
-Jetpack 'digitaltoad/vim-pug'
-Jetpack 'dNitro/vim-pug-complete', { 'for': ['jade', 'pug']   }
-Jetpack 'evanleck/vim-svelte'
+Jetpack 'mattn/emmet-vim'
 
 call jetpack#end()
 
@@ -73,6 +67,9 @@ inoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-i>   <Cmd>call pum#map#cancel()<CR>
+
+" emmet-vim SETTINGS
+let g:user_emmet_leader_key='<C-W>'
 
 " lightline SETTINGS
 let g:lightline = { 'colorscheme': 'wombat'   }
