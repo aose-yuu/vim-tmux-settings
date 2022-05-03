@@ -52,9 +52,9 @@ call ddc#custom#patch_global('sources', [
     \])
 call ddc#custom#patch_global('sourceOptions', {
     \'_': {
-    \ 'matchers': ['matcher_head'],
-    \ 'sorters': ['sorter_rank'],
-    \ 'converters': ['converter_remove_overlap'],
+    \'matchers': ['matcher_head'],
+    \'sorters': ['sorter_rank'],
+    \'converters': ['converter_remove_overlap'],
     \},
     \'around': {'mark': 'Around'},
     \'vim-lsp': {
@@ -118,6 +118,7 @@ set encoding=UTF-8
 set number
 set helplang=ja
 set backspace=2
+set lines=60
 set nobackup
 set noshowmode
 set noswapfile
