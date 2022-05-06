@@ -39,7 +39,7 @@ echo 'export TERM=xterm-color' >> .bash_profile
 source ~/.bash_profile
 ```
 
-2, Install Plug-in for vim or neovim
+2. Install Plug-in for vim or neovim
 ```
 :JetpackSync
 ```
