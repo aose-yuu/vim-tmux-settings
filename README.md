@@ -6,7 +6,6 @@ The following requirements must be met to run shell scripts.
 
 - node
 - npm
-- deno
 - vim or neovim
 - tmux
 - vim-jetpack
@@ -44,17 +43,9 @@ Run the following commands before you start using it.
 - [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
 - [mattn/vim-lexiv](https://github.com/mattn/vim-lexiv)
 - [lambdalisue/fern.vim](https://github.com/lambdalisue/fern.vim)
-- [Shougo/ddc.vim](https://github.com/Shougo/ddc.vim)
-- [vim-denops/denops.vim](https://github.com/vim-denops/denops.vim)
-- [Shougo/pum.vim](https://github.com/Shougo/pum.vim)
-- [Shougo/ddc-around](https://github.com/Shougo/ddc-around)
-- [LumaKernel/ddc-file](https://github.com/LumaKernel/ddc-file)
-- [Shougo/ddc-matcher_head](https://github.com/Shougo/ddc-matcher_head)
-- [Shougo/ddc-sorter_rank](https://github.com/Shougo/ddc-sorter_rank)
-- [Shougo/ddcconverter_remove_overlap](https://github.com/Shougo/ddcconverter_remove_overlap)
-- [shun/ddc-vim-lsp](https://github.com/shun/ddc-vim-lsp)
-- [prabirshrestha/vim-lsp](https://github.com/prabirshrestha/vim-lsp)
-- [mattn/vim-lsp-settings](https://github.com/mattn/vim-lsp-settings)
+- [mhinz/vim-startify](https://github.com/mhinz/vim-startify)
+- [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim)
+- [yaegassy/coc-volar-tools](https://github.com/yaegassy/coc-volar-tools)
 - [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
 
 ## License
