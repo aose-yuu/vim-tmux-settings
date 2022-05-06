@@ -49,6 +49,10 @@ source ~/.bash_profile
 :CocConfig
 ```
 
+```
+:CocInstall coc-pairs
+```
+
 ```json
 {
   "coc.preferences.formatOnType": true,
