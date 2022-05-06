@@ -32,10 +32,10 @@ A .tmux.conf file is created in the current directory.
 Run the following commands before you start using it.
 
 1. Bash SETTINGS
-```:bash
+```bash
 echo 'export TERM=xterm-color' >> .bash_profile
 ```
-```:bash
+```bash
 source ~/.bash_profile
 ```
 
@@ -49,7 +49,7 @@ source ~/.bash_profile
 :CocConfig
 ```
 
-```:json
+```json
 {
   "coc.preferences.formatOnType": true,
   "suggest.noselect": false,
