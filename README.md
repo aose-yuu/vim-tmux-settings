@@ -30,8 +30,42 @@ A .tmux.conf file is created in the current directory.
 
 ### Setup
 Run the following commands before you start using it.
+
+1. Bash SETTINGS
+```:bash
+echo 'export TERM=xterm-color' >> .bash_profile
+```
+```:bash
+source ~/.bash_profile
+```
+
+2, Install Plug-in for vim or neovim
 ```
 :JetpackSync
+```
+
+3. Coc SETTINGS
+```
+:CocConfig
+```
+
+```:json
+{
+  "coc.preferences.formatOnType": true,
+  "suggest.noselect": false,
+  "suggest.keepCompleteopt": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "dart"
+  ],
+  "languageserver": {
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": ["vim", "eruby", "markdown", "YAML"]
+    }
+  },
+  "svelte.enable-ts-plugin": true
+}
 ```
 
 ## Plug-ins in use
