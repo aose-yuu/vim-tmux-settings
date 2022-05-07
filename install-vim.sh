@@ -16,21 +16,13 @@ Jetpack 'sheerun/vim-polyglot'
 " エディタ関連プラグイン
 Jetpack 'tpope/vim-surround'
 Jetpack 'tpope/vim-commentary'
-Jetpack 'mattn/vim-lexiv'
+" Jetpack 'mattn/vim-lexiv'
 Jetpack 'lambdalisue/fern.vim'
+Jetpack 'mhinz/vim-startify'
 
 " 補完・LSP関連プラグイン
-Jetpack 'Shougo/ddc.vim'
-Jetpack 'vim-denops/denops.vim'
-Jetpack 'Shougo/pum.vim'
-Jetpack 'Shougo/ddc-around'
-Jetpack 'LumaKernel/ddc-file'
-Jetpack 'Shougo/ddc-matcher_head'
-Jetpack 'Shougo/ddc-sorter_rank'
-Jetpack 'Shougo/ddc-converter_remove_overlap'
-Jetpack 'shun/ddc-vim-lsp'
-Jetpack 'prabirshrestha/vim-lsp'
-Jetpack 'mattn/vim-lsp-settings'
+Jetpack 'neoclide/coc.nvim'
+Jetpack 'yaegassy/coc-volar-tools', {'do': 'yarn install --frozen-lockfile'}
 
 " 各言語別プラグイン
 Jetpack 'mattn/emmet-vim'
@@ -38,38 +30,34 @@ Jetpack 'mattn/emmet-vim'
 call jetpack#end()
 
 " 各プラグイン設定===================================================
-call ddc#custom#patch_global('completionMenu', 'pum.vim')
-call ddc#custom#patch_global('sources', [
-    \'around',
-    \'vim-lsp',
-    \'file',
-    \])
-call ddc#custom#patch_global('sourceOptions', {
-    \'_': {
-    \ 'matchers': ['matcher_head'],
-    \ 'sorters': ['sorter_rank'],
-    \ 'converters': ['converter_remove_overlap'],
-    \},
-    \'around': {'mark': 'Around'},
-    \'vim-lsp': {
-    \'mark': 'LSP',
-    \'matchers': ['matcher_head'],
-    \'forceCompletionPattern': '\.|:|->|"\w+/*'
-    \},
-    \'file': {
-    \'mark': 'file',
-    \'isColatile': v:true,
-    \'forceCompletionPattern': '\S/\S*'
-    \}})
-call ddc#enable()
-set completeopt-=preview
-inoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
-inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
-inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
-inoremap <C-i>   <Cmd>call pum#map#cancel()<CR>
+
+" coc.nvim SETTINGS
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+set completeopt=menuone,noselect
+set statusline^=%{coc#status()}
 
 " emmet-vim SETTINGS
 let g:user_emmet_leader_key='<C-W>'
+let g:user_emmet_settings = {
+\  'variables': {'lang': 'ja'},
+\  'html': {
+\    'default_attributes': {
+\      'option': {'value': v:null},
+\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
+\    },
+\    'snippets': {
+\      'html:5': "<!DOCTYPE html>\n"
+\              ."<html lang=\"${lang}\">\n"
+\              ."<head>\n"
+\              ."\t<meta charset=\"${charset}\">\n"
+\              ."\t<title></title>\n"
+\              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+\              ."</head>\n"
+\              ."<body>\n\t${child}|\n</body>\n"
+\              ."</html>",
+\    },
+\  },
+\}
 
 " lightline SETTINGS
 let g:lightline = { 'colorscheme': 'wombat'   }
@@ -97,6 +85,7 @@ if (empty($TMUX))
 endif
 
 " 基本設定===========================================================
+set termguicolors
 colorscheme onedark
 let g:im_select_default = 'com.apple.inputmethod.Kotoeri.Roman'
 highlight Normal ctermbg=NONE guibg=NONE
